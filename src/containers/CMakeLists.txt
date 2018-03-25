@@ -1,0 +1,13 @@
+# Set output library.
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/containers/test)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+
+#add_library(containers SHARED)
+
+add_executable(vector_test vector_test.cpp ../base/basic.cpp
+        ../base/logging.cpp)
+
+#Install header files
+FILE(GLOB HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+install(FILES ${HEADER_FILES} DESTINATION ${PROJECT_BINARY_DIR}/include/containers)
